@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [HelpURL("https://docs.unity3d.com/ScriptReference/HeaderAttribute.html")]
-public class SliderReadAndRotateServ : MonoBehaviour {
+public class GameManager : MonoBehaviour {
 
     [HideInInspector]
     public int HidedInt;
@@ -37,5 +37,11 @@ public class Item
 {
     public int Id;
     public string Name;
-    public Sprite Image;
+    public Texture Image;
+    public GameObject go;
+    public void ApplyTexture()
+    {
+        go.GetComponent<Renderer>().sharedMaterial.mainTexture = Image;
+    }
+
 }
